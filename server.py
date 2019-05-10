@@ -30,7 +30,8 @@ def example_api_response(some_id):
         "random_number": randrange(some_id)
     }
 
-if os.environ.get("PYW_ODIN") == "heroku":
+
+if os.environ.get("APP_LOCATION") == "heroku":
     run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
 else:
     run(host="localhost", port=8080, debug=True)
